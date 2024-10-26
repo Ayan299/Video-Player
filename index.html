@@ -27,7 +27,7 @@
         video.addEventListener('loadedmetadata', () => {
             const textTracks = video.textTracks; // Access subtitle tracks
             if (textTracks.length > 0) {
-                textTracks[0].mode = 'showing'; // Force enable the first subtitle track
+                textTracks[1].mode = 'showing'; // Force enable the first subtitle track
             }
             
             // Check if audioTracks API is supported
@@ -48,7 +48,7 @@
         video.addEventListener("play", () => {
             const textTracks = video.textTracks;
             if (textTracks.length > 0 && textTracks[0].mode !== "showing") {
-                textTracks[0].mode = "showing";
+                textTracks[1].mode = "showing";
             }
         });
 
