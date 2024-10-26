@@ -1,0 +1,19 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write # This allows the token to write ID tokens
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run a sample command
+        run: echo "Hello, world!"
