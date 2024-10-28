@@ -1,67 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player with Audio and Subtitle Selector</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Drive Video Player</title>
+  <style>
+    /* Make the video responsive */
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-    <video id="videoPlayer" controls preload="metadata">
-        <!-- Video source -->
-        <source src="https://onedrive.live.com/download?cid=DA85EAD8CBC543C8&resid=DA85EAD8CBC543C8!116&authkey=!AGL9zceVuQgFOnc" type="video/mp4">
-    </video>
-        <!-- Subtitle track(modify the src to your subtitle file location) -->
-        <!--<track src="https://github.com/Ayan299/Video-Player/blob/main/Spider-Man-1080p-YIFI-Eng.vtt" kind="captions" srclang="en" label="English">
+  <h1>Google Drive Video Player</h1>
+  <video controls>
     
-
-    <!-- Dropdown for selecting audio track -->
-    <select id="audioTrackSelector">
-        <option value="">Select Audio Track</option>
-    </select>
-
-    <script>
-        const video = document.getElementById('videoPlayer');
-        const audioTrackSelector = document.getElementById('audioTrackSelector');
-        
-        // Force subtitles to be displayed
-        video.addEventListener('loadedmetadata', () => {
-            const textTracks = video.textTracks; // Access subtitle tracks
-            if (textTracks.length > 0) {
-                textTracks[0].mode = 'showing'; // Force enable the first subtitle track
-            }
-            
-            // Check if audioTracks API is supported
-            if (video.audioTracks) {
-                const audioTracks = video.audioTracks;
-
-                // Populate selector with available audio tracks
-                for (let i = 0; i < audioTracks.length; i++) {
-                    const option = document.createElement('option');
-                    option.value = i;
-                    option.text = `Audio Track ${i + 1}`;
-                    audioTrackSelector.appendChild(option);
-                }
-            }
-        });
-
-        // Reapply showing mode to subtitles if changed
-        video.addEventListener("play", () => {
-            const textTracks = video.textTracks;
-            if (textTracks.length > 0 && textTracks[0].mode !== "showing") {
-                textTracks[0].mode = "showing";
-            }
-        });
-
-        // Switch audio track on selection change (if audioTracks API is supported)
-        audioTrackSelector.addEventListener('change', () => {
-            if (video.audioTracks) {
-                const selectedTrackIndex = audioTrackSelector.value;
-                for (let i = 0; i < video.audioTracks.length; i++) {
-                    video.audioTracks[i].enabled = (i == selectedTrackIndex);
-                    video.tex
-                }
-            }
-        });
-    </script>
+    <source src="https://onedrive.live.com/download?cid=DA85EAD8CBC543C8&resid=DA85EAD8CBC543C8!118&authkey=!AATT8XcS8MkoJUM" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </body>
 </html>
